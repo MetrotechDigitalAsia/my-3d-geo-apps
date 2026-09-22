@@ -57,9 +57,12 @@ export default function LeftPanel({
 
                 {/* Header */}
                 <div className={styles.header}>
-                    <div>
-                        <h2 className={styles.title}>Makassar Geo</h2>
-                        <span className={styles.subtitle}>Spatial Visualization System</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <img src="/image/citranusa-white.svg" alt="Citra Nusa" style={{ width: '32px', height: '32px' }} />
+                        <div>
+                            <h2 className={styles.title}>Citra Nusa</h2>
+                            <span className={styles.subtitle}>Spatial Visualization System</span>
+                        </div>
                     </div>
                     <button
                         onClick={() => setIsCollapsed(true)}

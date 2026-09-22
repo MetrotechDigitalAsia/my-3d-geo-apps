@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as THREE from 'three';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { TilesRenderer } from '3d-tiles-renderer';
@@ -813,10 +814,8 @@ export class ThreeDTilesLayer implements maplibregl.CustomLayerInterface {
         console.log('[TileStats] maxAnisotropy:', this.maxAnisotropy);
     }
 
-    onRemove(
-        _map: maplibregl.Map,
-        _gl: WebGLRenderingContext | WebGL2RenderingContext
-    ): void {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    onRemove(_map: maplibregl.Map, _gl: WebGLRenderingContext | WebGL2RenderingContext): void {
         this.stopRepaintLoop();
         if ((globalThis as any).__tilesLayer === this) {
             delete (globalThis as any).__tilesLayer;

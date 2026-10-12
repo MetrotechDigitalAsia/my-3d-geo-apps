@@ -4,7 +4,7 @@
     "": {
       "name": "my-3d-geo-apps",
       "dependencies": {
-        "3d-tiles-renderer": "^0.4.21",
+        "3d-tiles-renderer": "^0.5.3",
         "@deck.gl/core": "^9.2.6",
         "@deck.gl/geo-layers": "^9.2.6",
         "@deck.gl/layers": "^9.2.6",
@@ -16,6 +16,7 @@
         "@loaders.gl/obj": "^4.3.4",
         "@types/proj4": "^2.19.0",
         "@types/three": "^0.182.0",
+        "maplibre-3d-tiles-layer": "^0.1.0",
         "maplibre-gl": "^5.17.0",
         "next": "16.1.6",
         "proj4": "^2.20.2",
@@ -47,7 +48,7 @@
     "unrs-resolver",
   ],
   "packages": {
-    "3d-tiles-renderer": ["3d-tiles-renderer@0.4.21", "", { "peerDependencies": { "@babylonjs/core": ">=8.0.0", "@babylonjs/loaders": ">=8.0.0", "@react-three/fiber": "^8.17.9 || ^9.0.0", "react": "^18.3.1 || ^19.0.0", "react-dom": "^18.3.1 || ^19.0.0", "three": ">=0.167.0" }, "optionalPeers": ["@babylonjs/core", "@babylonjs/loaders", "@react-three/fiber", "react", "react-dom", "three"] }, "sha512-tpXt8sGeQRst94jepL2LXZunQZD0x6zKaSsQX+OxeFsDjOTxfv3UK10xlqnD/j7MZH7jlBjiFur6jb3w3NKoeg=="],
+    "3d-tiles-renderer": ["3d-tiles-renderer@0.5.3", "", { "dependencies": { "@mapbox/vector-tile": "^2.0.3", "pbf": "^4.0.1", "pmtiles": "^4.3.2" }, "peerDependencies": { "@babylonjs/core": ">=8.0.0", "@babylonjs/loaders": ">=8.0.0", "@react-three/fiber": "^8.17.9 || ^9.0.0", "react": "^18.3.1 || ^19.0.0", "react-dom": "^18.3.1 || ^19.0.0", "three": ">=0.167.0" }, "optionalPeers": ["@babylonjs/core", "@babylonjs/loaders", "@react-three/fiber", "react", "react-dom", "three"] }, "sha512-i2TEtsboVa7C5pCpNKO3ctAopK0NlIReRb/CJKpvXDrwjWYL1M2oaKRZddvGDHE5udx7OyGN04glotqNruQYmQ=="],
 
     "3d-tiles-tools": ["3d-tiles-tools@0.5.1", "", { "dependencies": { "@gltf-transform/core": "^3.9.0", "@gltf-transform/extensions": "^3.9.0", "@gltf-transform/functions": "^3.9.0", "archiver": "^5.3.1", "better-sqlite3": "^11.5.0", "cesium": "^1.103.0", "draco3d": "^1.5.6", "draco3dgltf": "^1.5.6", "gltf-pipeline": "^4.1.0", "gltfpack": "^0.19.1", "meshoptimizer": "^0.19.0", "minimist": "^1.2.7", "node-stream-zip": "^1.15.0", "pino": "^8.15.0", "pino-pretty": "^10.2.0", "seedrandom": "^3.0.5", "sharp": "^0.32.1", "yargs": "^17.5.1" }, "bin": { "3d-tiles-tools": "build/src/cli.mjs" } }, "sha512-vK3jxwQf5GGMZj5CHpyO+XZItK8Kzu3eHBKdRph2DXSLA1j1ptY7vS3eGJftzV4maGtwboGrUL8hNwUQjydzdA=="],
 
@@ -1425,6 +1426,8 @@
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
+    "maplibre-3d-tiles-layer": ["maplibre-3d-tiles-layer@0.1.0", "", { "peerDependencies": { "3d-tiles-renderer": "^0.5.3", "maplibre-gl": ">=5.0.0 <7", "three": ">=0.167.0" } }, "sha512-aLSMhrkxhLS4oTvBVkL9w4Pj7HhM7zgOMUCx9XJyJgZbzK/pSMHaHSneQMeGmZslRlKQOPUcDs0pog4LHo07hQ=="],
+
     "maplibre-gl": ["maplibre-gl@5.17.0", "", { "dependencies": { "@mapbox/geojson-rewind": "^0.5.2", "@mapbox/jsonlint-lines-primitives": "^2.0.2", "@mapbox/point-geometry": "^1.1.0", "@mapbox/tiny-sdf": "^2.0.7", "@mapbox/unitbezier": "^0.0.1", "@mapbox/vector-tile": "^2.0.4", "@mapbox/whoots-js": "^3.1.0", "@maplibre/geojson-vt": "^5.0.4", "@maplibre/maplibre-gl-style-spec": "^24.4.1", "@maplibre/mlt": "^1.1.2", "@maplibre/vt-pbf": "^4.2.1", "@types/geojson": "^7946.0.16", "@types/supercluster": "^7.1.3", "earcut": "^3.0.2", "gl-matrix": "^3.4.4", "kdbush": "^4.0.2", "murmurhash-js": "^1.0.0", "pbf": "^4.0.1", "potpack": "^2.1.0", "quickselect": "^3.0.0", "supercluster": "^8.0.1", "tinyqueue": "^3.0.0" } }, "sha512-gwS6NpXBfWD406dtT5YfEpl2hmpMm+wcPqf04UAez/TxY1OBjiMdK2ZoMGcNIlGHelKc4+Uet6zhDdDEnlJVHA=="],
 
     "math-intrinsics": ["math-intrinsics@1.1.0", "", {}, "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="],
@@ -1606,6 +1609,8 @@
     "pino-pretty": ["pino-pretty@10.3.1", "", { "dependencies": { "colorette": "^2.0.7", "dateformat": "^4.6.3", "fast-copy": "^3.0.0", "fast-safe-stringify": "^2.1.1", "help-me": "^5.0.0", "joycon": "^3.1.1", "minimist": "^1.2.6", "on-exit-leak-free": "^2.1.0", "pino-abstract-transport": "^1.0.0", "pump": "^3.0.0", "readable-stream": "^4.0.0", "secure-json-parse": "^2.4.0", "sonic-boom": "^3.0.0", "strip-json-comments": "^3.1.1" }, "bin": { "pino-pretty": "bin.js" } }, "sha512-az8JbIYeN/1iLj2t0jR9DV48/LQ3RC6hZPpapKPkb84Q+yTidMCpgWxIT3N0flnBDilyBQ1luWNpOeJptjdp/g=="],
 
     "pino-std-serializers": ["pino-std-serializers@6.2.2", "", {}, "sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA=="],
+
+    "pmtiles": ["pmtiles@4.5.0", "", { "dependencies": { "fflate": "^0.8.2" } }, "sha512-CBeD4SoUluFziGdy/8k7FOjQxQy486n+929W/tWophauvMICpkZ26vGBWhDt/6b1FZQWNaf4jFdT/5+q0Wii5w=="],
 
     "pngjs": ["pngjs@3.4.0", "", {}, "sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w=="],
 

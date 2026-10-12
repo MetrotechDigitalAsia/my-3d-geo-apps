@@ -4,7 +4,6 @@
     "": {
       "name": "my-3d-geo-apps",
       "dependencies": {
-        "maplibre-3d-tiles-layer": "./vendor/maplibre-3d-tiles-layer-0.1.0.tgz",
         "3d-tiles-renderer": "^0.5.3",
         "@deck.gl/core": "^9.2.6",
         "@deck.gl/geo-layers": "^9.2.6",
@@ -17,6 +16,7 @@
         "@loaders.gl/obj": "^4.3.4",
         "@types/proj4": "^2.19.0",
         "@types/three": "^0.182.0",
+        "maplibre-3d-tiles-layer": "^0.1.0",
         "maplibre-gl": "^5.17.0",
         "next": "16.1.6",
         "proj4": "^2.20.2",
@@ -1426,7 +1426,7 @@
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
-    "maplibre-3d-tiles-layer": ["maplibre-3d-tiles-layer@./vendor/maplibre-3d-tiles-layer-0.1.0.tgz", { "peerDependencies": { "3d-tiles-renderer": "^0.5.3", "maplibre-gl": ">=5.0.0 <7", "three": ">=0.167.0" } }],
+    "maplibre-3d-tiles-layer": ["maplibre-3d-tiles-layer@0.1.0", "", { "peerDependencies": { "3d-tiles-renderer": "^0.5.3", "maplibre-gl": ">=5.0.0 <7", "three": ">=0.167.0" } }, "sha512-aLSMhrkxhLS4oTvBVkL9w4Pj7HhM7zgOMUCx9XJyJgZbzK/pSMHaHSneQMeGmZslRlKQOPUcDs0pog4LHo07hQ=="],
 
     "maplibre-gl": ["maplibre-gl@5.17.0", "", { "dependencies": { "@mapbox/geojson-rewind": "^0.5.2", "@mapbox/jsonlint-lines-primitives": "^2.0.2", "@mapbox/point-geometry": "^1.1.0", "@mapbox/tiny-sdf": "^2.0.7", "@mapbox/unitbezier": "^0.0.1", "@mapbox/vector-tile": "^2.0.4", "@mapbox/whoots-js": "^3.1.0", "@maplibre/geojson-vt": "^5.0.4", "@maplibre/maplibre-gl-style-spec": "^24.4.1", "@maplibre/mlt": "^1.1.2", "@maplibre/vt-pbf": "^4.2.1", "@types/geojson": "^7946.0.16", "@types/supercluster": "^7.1.3", "earcut": "^3.0.2", "gl-matrix": "^3.4.4", "kdbush": "^4.0.2", "murmurhash-js": "^1.0.0", "pbf": "^4.0.1", "potpack": "^2.1.0", "quickselect": "^3.0.0", "supercluster": "^8.0.1", "tinyqueue": "^3.0.0" } }, "sha512-gwS6NpXBfWD406dtT5YfEpl2hmpMm+wcPqf04UAez/TxY1OBjiMdK2ZoMGcNIlGHelKc4+Uet6zhDdDEnlJVHA=="],
 

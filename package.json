@@ -21,7 +21,7 @@
     "@loaders.gl/obj": "^4.3.4",
     "@types/proj4": "^2.19.0",
     "@types/three": "^0.182.0",
-    "maplibre-3d-tiles-layer": "./vendor/maplibre-3d-tiles-layer-0.1.0.tgz",
+    "maplibre-3d-tiles-layer": "^0.1.0",
     "maplibre-gl": "^5.17.0",
     "next": "16.1.6",
     "proj4": "^2.20.2",

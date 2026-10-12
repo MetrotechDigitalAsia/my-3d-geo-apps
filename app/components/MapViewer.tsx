@@ -12,7 +12,7 @@ import DataTableDrawer from './panels/DataTableDrawer';
 import { useShapefileLayers, LayerState } from './gis/useShapefileLayers';
 import { SHAPEFILE_LAYERS } from './gis/layerRegistry';
 import { MAKASSAR_CENTER } from '../utils/geoUtils';
-import { ThreeDTilesLayer } from '../utils/threeDTilesLayer';
+import { ThreeDTilesLayer } from 'maplibre-3d-tiles-layer';
 import styles from './MapViewer.module.css';
 
 // Initial map view settings for Makassar
@@ -102,23 +102,20 @@ export default function MapViewer() {
 
         map.on('load', () => {
             // ── Add 3D Tiles as a MapLibre Custom Layer ────────────────────────
-            // ThreeDTilesLayer uses 3d-tiles-renderer (NASA/JPL) + Three.js,
-            // sharing MapLibre's existing WebGL context.  errorTarget = 0 forces
-            // the finest available LOD tiles to load progressively, and each
-            // loaded tile triggers triggerRepaint() so the canvas updates without
-            // any user interaction.
-            const tilesetUrl = `${window.location.origin}/terra_b3dms/tileset.json`;
-            // altitudeOffset (metres): raise the model above MSL if tiles appear
-            // underground.  Increase in 10–50 m steps until visible, then tune.
-            const tilesLayer = new ThreeDTilesLayer(
-                TILES_LAYER_ID,
-                tilesetUrl,
-                MAKASSAR_CENTER.lng,
-                MAKASSAR_CENTER.lat,
-                0   // ← altitudeOffset in metres; increase if model underground
-            );
+            // maplibre-3d-tiles-layer streams the tileset with 3d-tiles-renderer
+            // + Three.js inside MapLibre's WebGL context. quality 'max' loads
+            // every leaf tile (errorTarget 0, 4 GB cache), matching the previous
+            // in-repo layer; switch to 'balanced' for phones.
+            const tilesLayer = new ThreeDTilesLayer({
+                id: TILES_LAYER_ID,
+                url: `${window.location.origin}/terra_b3dms/tileset.json`,
+                origin: MAKASSAR_CENTER,
+                // Metres; raise in 10–50 m steps if the model appears underground.
+                altitudeOffset: 0,
+                quality: 'max',
+            });
             tilesLayerRef.current = tilesLayer;
-            map.addLayer(tilesLayer as unknown as maplibregl.CustomLayerInterface);
+            map.addLayer(tilesLayer);
 
             setIsLoading(false);
             setLoadingMessage('');
